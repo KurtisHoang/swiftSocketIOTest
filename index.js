@@ -27,10 +27,14 @@ io.on('connection', function(clientSocket){
   clientSocket.on('connectUser', function(nickname) {
     userList.push(nickname);
     clientSocket.username = nickname;
-    console.log('user: ' + clientSocket.username + 'has entered!');
+    console.log('user: ' + clientSocket.username + ' has entered!');
   });
 
-  clientSocket.on('createChatroom', function(){
+  clientSocket.on('getUser', function() {
+    clientSocket.emit('getUser', clientSocket.username);
+  });
+
+  clientSocket.on('createChatroom', function(data){
 
   });
 });
