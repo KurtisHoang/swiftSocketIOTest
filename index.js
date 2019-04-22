@@ -30,4 +30,7 @@ io.on('connection', function(clientSocket){
     console.log('user: ' + clientSocket.username + 'has entered!');
   });
 
+  clientSocket.on('createChatroom', function(){
+
+  });
 });
